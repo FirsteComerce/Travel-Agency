@@ -2,7 +2,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
     "mongoose": "^8.4.3",
     "react-router-dom": "^6.23.1"
+=======
+    "mongoose": "^8.4.1"
+>>>>>>> aaee33dc4c03f03dea7b3f1a07b0f3f5c1b120ce
   }
 }
