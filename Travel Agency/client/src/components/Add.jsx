@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Add() {
+    //For flights 
     const [id, setId] = useState('');
     const [capacite, setCapacite] = useState('');
     const [price, setPrice] = useState('');
@@ -39,6 +40,9 @@ function Add() {
             <button onClick={handleAdd}>Add</button>
         </div>
     );
+    
 }
+
+
 
 export default Add;

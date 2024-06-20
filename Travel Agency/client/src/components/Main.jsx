@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Flight from './Flight.jsx';
-import Navbar from './Navbar.jsx';
-import Search from './Search.jsx';
-import Add from './Add.jsx';
+import Hotel from './Hotel.jsx'; 
+import Addhotel from './Addhotel.jsx';
+import Search from './Search.jsx'; 
 
 const Main = () => {
+  const [hotels, setHotels] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
-  const [flights, setFlights] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/flight/')
+    axios.get('http://localhost:3003/api/hotels/select')
       .then((res) => {
-        setFlights(res.data);
+        setHotels(res.data);
+        setSearchResults(res.data); 
       })
       .catch((err) => {
         console.log(err);
@@ -22,9 +21,12 @@ const Main = () => {
 
   return (
     <>
-      <Add/>
+      <Addhotel />
+      <Search setSearchResults={setSearchResults} /> 
+      <Hotel hotels={searchResults} /> 
     </>
   );
 };
 
 export default Main;
+ 

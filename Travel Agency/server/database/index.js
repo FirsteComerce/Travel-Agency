@@ -1,9 +1,20 @@
-const mongoose = require('mongoose')
-const mongo_url ='mongodb://127.0.0.1:27017/Travel'
 
-mongoose.connect(mongo_url,{ useUnifiedTopology: true, useNewUrlParser: true })
-                .then(() => console.log('MongoDB connected !'))
-                .catch((e) => console.error(e));
-const db = mongoose.connection;
+const express = require('express'); 
+const mongoose = require('mongoose');
 
-module.exports = db
+
+
+const app = express();
+
+mongoose.connect('mongodb://localhost:27017/hotels', {
+
+})
+.then(() => {
+    console.log("Connected to MongoDB"); 
+})
+.catch((err) => {
+    console.log("Connection failed",err);
+    
+});
+const db = mongoose.connection; 
+module.exports = db;

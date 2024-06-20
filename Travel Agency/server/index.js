@@ -8,8 +8,8 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/flight',routes);
-const PORT = process.env.PORT || 3000
+app.use('/api/hotels',routes);
+const PORT = process.env.PORT || 3003
 app.listen(PORT, function () {
-  console.log("listening on port 3000!");
+  console.log("listening on port 3003!");
 });

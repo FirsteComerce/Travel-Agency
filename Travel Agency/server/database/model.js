@@ -1,16 +1,14 @@
-const mongoose = require("mongoose");
-const db = require("./index.js");
-
-const Schema = new mongoose.Schema({
-    id : Number,
-    type_flight:String,
-    capacite:Number,
-    go_date:Date,
-    return_date:Date,
-    destination:String,
-    price:Number,
-    image:Array,
-
+const mongoose = require('mongoose');
+const db = require ("./index.js")
+const hotelsSchema = new mongoose.Schema({
+  price: Number,
+  type: String,
+  capacite: Number,
+  name : String,
+  etoile : Number,
+  description : String, 
+  image : Array
+  
 });
 
-module.exports = mongoose.model('Schema', Schema);
+module.exports = mongoose.model("Hotels", hotelsSchema); 
