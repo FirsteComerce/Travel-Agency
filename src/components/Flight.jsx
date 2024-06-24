@@ -186,13 +186,13 @@ function Flight({ flights, setQuery }) {
                   <p id="view-return">Return Date: {formatDate(flight.return_date)}</p>
                   <p id="view-destination">Destination: {flight.destination}</p>
                   <p id="view-price">Price: {flight.price}</p>
-                  <li>
+                  <div className="flight-image">
                     <img
                       src={flight.image}
                       alt="Flight"
-                      style={{ maxWidth: "200px", maxHeight: "200px" }}
+                      className="flight-img"
                     />
-                  </li>
+                  </div>
                 </>
               )}
             </div>
