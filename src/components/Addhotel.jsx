@@ -81,7 +81,7 @@ function Addhotel() {
             price: parseInt(price),
             type,
             capacite: parseInt(capacite),
-            name,
+            name:name,
             etoile: parseInt(etoile),
             description,
             image :imageUrl,

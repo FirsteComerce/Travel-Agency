@@ -12,6 +12,7 @@ function Hotel({ setQuery }) {
   const [name, setName] = useState('');
   const [etoile, setEtoile] = useState('');
   const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
   const [hotels, setHotels] = useState([]);
   const [originalHotel, setOriginalHotel] = useState(null);
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ function Hotel({ setQuery }) {
       setName(hotel.hotlName);
       setEtoile(hotel.etoile);
       setDescription(hotel.description);
+      setImage(hotel.image);
     }
   };
 
@@ -88,6 +90,7 @@ function Hotel({ setQuery }) {
       name: name,
       etoile: etoile,
       description: description,
+      image: image,
     };
     if (
       type === originalHotel.type &&
@@ -150,7 +153,6 @@ function Hotel({ setQuery }) {
                   <input id="edit-name" type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                   <input id="edit-etoile" type="text" placeholder="Star" value={etoile} onChange={(e) => setEtoile(e.target.value)} />
                   <input id="edit-description" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-                  <input id="edit-image" type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
                 </>
               ) : (
                 <>
@@ -160,13 +162,13 @@ function Hotel({ setQuery }) {
                   <p id="view-name">Name: {hotel.hotlName}</p>
                   <p id="view-etoile">Star: {hotel.etoile}</p>
                   <p id="view-description">Description:<br/> {hotel.description}</p>
-                  <li>
+                  <div className="hotel-image">
                     <img
                       src={hotel.image}
-                      alt="Flight"
-                      style={{ maxWidth: "200px", maxHeight: "200px" }}
+                      alt="Hotel"
+                      className="hotel-img"
                     />
-                  </li>
+                  </div>
                 </>
               )}
             </div>
