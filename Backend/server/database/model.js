@@ -9,7 +9,7 @@ const Schema = new mongoose.Schema({
     return_date:Date,
     destination:String,
     price:Number,
-    image:Array,
+    image:String,
 });
 
 const res = new mongoose.Schema({
@@ -35,7 +35,7 @@ const hotelsSchema = new mongoose.Schema({
     hotlName : String,
     etoile : Number,
     description : String, 
-    image : Array
+    image : String
   });
 
 module.exports = {Flight :mongoose.model('Schema', Schema),

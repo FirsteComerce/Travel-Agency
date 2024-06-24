@@ -12,7 +12,6 @@ function Hotel({ setQuery }) {
   const [name, setName] = useState('');
   const [etoile, setEtoile] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
   const [hotels, setHotels] = useState([]);
   const [originalHotel, setOriginalHotel] = useState(null);
   const navigate = useNavigate();
@@ -38,10 +37,9 @@ function Hotel({ setQuery }) {
       setCapacite(hotel.capacite);
       setType(hotel.type);
       setPrice(hotel.price);
-      setName(hotel.name);
+      setName(hotel.hotlName);
       setEtoile(hotel.etoile);
       setDescription(hotel.description);
-      setImage(hotel.image);
     }
   };
 
@@ -90,15 +88,12 @@ function Hotel({ setQuery }) {
       name: name,
       etoile: etoile,
       description: description,
-      image: image
     };
-
-    // Check if values are the same as original
     if (
       type === originalHotel.type &&
       capacite === originalHotel.capacite &&
       price === originalHotel.price &&
-      name === originalHotel.name &&
+      name === originalHotel.hotlName &&
       etoile === originalHotel.etoile &&
       description === originalHotel.description &&
       image === originalHotel.image
@@ -133,7 +128,7 @@ function Hotel({ setQuery }) {
       capacite: hotl.capacite,
       go: null,
       ret: null,
-      resName: hotl.name,
+      resName: hotl.hotlName,
       price: hotl.price,
       etoile: hotl.etoile,
       description: hotl.description,
@@ -162,10 +157,16 @@ function Hotel({ setQuery }) {
                   <p id="view-type">Type: {hotel.type}</p>
                   <p id="view-capacite">Capacity: {hotel.capacite}</p>
                   <p id="view-price">Price: {hotel.price}</p>
-                  <p id="view-name">Name: {hotel.name}</p>
+                  <p id="view-name">Name: {hotel.hotlName}</p>
                   <p id="view-etoile">Star: {hotel.etoile}</p>
                   <p id="view-description">Description:<br/> {hotel.description}</p>
-                  <p id="view-image">Image: {hotel.image}</p>
+                  <li>
+                    <img
+                      src={hotel.image}
+                      alt="Flight"
+                      style={{ maxWidth: "200px", maxHeight: "200px" }}
+                    />
+                  </li>
                 </>
               )}
             </div>

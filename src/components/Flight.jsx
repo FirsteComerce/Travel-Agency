@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import "./Flight.css"; // Import the CSS file
+import "./Flight.css";
 
 function Flight({ flights, setQuery }) {
   const navigate = useNavigate();
@@ -83,8 +83,6 @@ function Flight({ flights, setQuery }) {
       destination: destination,
       price: price,
     };
-
-    // Check if values are the same as original
     if (
       type === originalFlight.type_flight &&
       capacite === originalFlight.capacite &&
@@ -155,14 +153,14 @@ function Flight({ flights, setQuery }) {
                     id="edit-go"
                     type="text"
                     placeholder="Go Date"
-                    value={go}
+                    value={formatDate(go)}
                     onChange={(e) => setGo(e.target.value)}
                   />
                   <input
                     id="edit-return"
                     type="text"
                     placeholder="Return Date"
-                    value={ret}
+                    value={formatDate(ret)}
                     onChange={(e) => setRet(e.target.value)}
                   />
                   <input
@@ -188,6 +186,13 @@ function Flight({ flights, setQuery }) {
                   <p id="view-return">Return Date: {formatDate(flight.return_date)}</p>
                   <p id="view-destination">Destination: {flight.destination}</p>
                   <p id="view-price">Price: {flight.price}</p>
+                  <li>
+                    <img
+                      src={flight.image}
+                      alt="Flight"
+                      style={{ maxWidth: "200px", maxHeight: "200px" }}
+                    />
+                  </li>
                 </>
               )}
             </div>
