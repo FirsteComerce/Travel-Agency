@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
 import Search from "./components/Search.jsx";
 import Add from "./components/Add.jsx";
 import Flight from "./components/Flight.jsx";
-import Home from "./components/Home.jsx";
+import Home from "./components/login etc/Home.jsx";
+import Login from './components/login etc/Login.jsx'
+import Dashboard from './components/login etc/Dashboard.jsx'
+import Registration from './components/login etc/Registrationn'
+import Nav from './/components/login etc/Navbar.jsx'
 import Hotel from "./components/Hotel.jsx";
 import Reservation from "./components/Reservation.jsx";
 import SearchRes from "./components/SearchRes.jsx";
@@ -41,9 +45,13 @@ const App = () => {
   return (
     <>
       <Router>
-        <Navbar setSearchResults={setSearchResults}/>
+        <Nav />
+        {/* setSearchResults={setSearchResults} */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path='/register' element={<Registration/>}></Route>
+          <Route path='/' element={<Login/>}></Route>
+          <Route path='/dashboard' element={<Dashboard/>}></Route>
           <Route path="/hotel" element={<Hotel setQuery={setQuery}/>} />
           <Route path="/hotels/add" element={<Addhotel/>}/>
           <Route path="/reservation" element={<Reservation reservation={reservation} query={query}/>} />
