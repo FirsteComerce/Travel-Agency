@@ -1,0 +1,97 @@
+/* Add.css */
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .add-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input Fields Styling */
+  input[type="text"],
+  input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:not([readonly]) + .required-asterisk,
+  input[type="date"]:not([readonly]) + .required-asterisk {
+    color: red;
+    margin-left: -20px;
+  }
+  
+  input[readonly] {
+    background-color: #e9ecef;
+  }
+  
+  /* Button Styling */
+  #add-button,
+  #cancel-button {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #add-button:hover {
+    background-color: #218838;
+  }
+  
+  #cancel-button {
+    background-color: #dc3545;
+  }
+  
+  #cancel-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Disclaimer Styling */
+  .disclaimer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 600px) {
+    .add-container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    input[type="date"] {
+      width: calc(100% - 16px);
+      padding: 8px;
+    }
+  
+    #add-button,
+    #cancel-button {
+      width: calc(100% - 16px);
+      margin: 8px 0;
+    }
+  
+    input[type="text"]:not([readonly]) + .required-asterisk,
+    input[type="date"]:not([readonly]) + .required-asterisk {
+      margin-top: 10px;
+    }
+  }
+  

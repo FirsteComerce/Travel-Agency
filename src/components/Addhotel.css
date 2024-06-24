@@ -1,0 +1,91 @@
+/* Addhotel.css */
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.add-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields Styling */
+.input-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.required-asterisk {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: red;
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+}
+
+/* Button Styling */
+#addhotel-button,
+#cancelhotel-button {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 10px 5px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addhotel-button:hover {
+    background-color: #218838;
+}
+
+#cancelhotel-button {
+    background-color: #dc3545;
+}
+
+#cancelhotel-button:hover {
+    background-color: #c82333;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .add-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: calc(100% - 16px);
+        padding: 8px;
+    }
+
+    #addhotel-button,
+    #cancelhotel-button {
+        width: calc(100% - 16px);
+        margin: 8px 0;
+    }
+
+}
